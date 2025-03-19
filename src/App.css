@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  margin: 0;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
   color: white;
+  background-image: url('https://www.stockvault.net/data/2019/03/09/261906/preview16.jpg');
+  background-size: cover;
+}
+form {
+  display: flex;
+  justify-content: center;
+
+}
+#search-type {
+  display: flex;
+  justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  margin-left: 0.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+select {
+  height: 4vh;
+  margin-left: 1em;
+  margin-top: 0.5em;
 }
+
+/* #weather-details-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+h1{
+  display: flex;
+  justify-content: center;
+}
+#weather-details-box {
+  display: flex;
+  flex-direction: column;
+  width: 60vh;
+  /* border-width: 1px;
+  border-style: solid; */
+  background-color: rgba(3, 4, 87, 0.516);
+  align-items: center;
+}
+
+#weather-text {
+  text-align: justify;
+}
+
