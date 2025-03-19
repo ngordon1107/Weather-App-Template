@@ -10,7 +10,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [count, setCount] = useState(0);
-  const [selectedValue, setSelectedValue] = useState('');
   // const [searchType, setSearchType] = useState(() => {
   //   if (Object.keys(getUSStates).includes(location.toLowerCase()) || Object.values(getUSStates).includes(location.toLowerCase())) {
   //     return 'state'
@@ -76,8 +75,7 @@ function App() {
   };
 
   const changeSearchType = (e) => {
-    setSelectedValue(e.target.value);
-    setSearchType(e.target.name);
+    setSearchType(e.target.value);
     //setLocation(defaultLocation);
   };
 
@@ -85,6 +83,10 @@ function App() {
   const handleSubmit = (e) => {
     //prevents reloading the page on submit
     e.preventDefault();
+
+    if (!location.city) {
+      alert("You must enter a city to continue");
+    }
 
     setLoading(true);
     getWeather(location)
@@ -140,21 +142,21 @@ function App() {
                 value={location[searchType]}
                 onChange={handleChange}
               />
-              <button type="button" type="submit">
+              <button type="submit">
                 Search
               </button>
             </label>
           </form>
           <div id="search-type">
-          <p>Or search by... </p>
+          <p>Narrow your search by... </p>
             {/* <button type="button" name="city" onClick={changeSearchType}>
               City
             </button>
             <span className="separator"> | </span> */}
-            <select value={selectedValue} onChange={changeSearchType}>
-              <option name="city" value="city">city</option>
-              <option name="state" value="state">state</option>
-              <option name="zipcode" value="zip code">zip code</option>
+            <select value={searchType} onChange={changeSearchType}>
+              <option value="city">city</option>
+              <option value="state">state</option>
+              <option value="zipcode">zip code</option>
               <option name="landmark" value="landmark">landmark</option>
             </select>
             {/* <button type="button" name="state" onClick={changeSearchType}>
