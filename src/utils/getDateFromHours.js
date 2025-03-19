@@ -3,4 +3,4 @@ function getDateFromHours(time) {
     return date.toLocaleString();
   }
 
-export { getDateFromHours};
+export { getDateFromHours };
